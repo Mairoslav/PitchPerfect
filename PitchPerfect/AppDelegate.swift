@@ -7,10 +7,13 @@
 
 import UIKit
 
+// MARK: AppDelegage.swift class that will listen to system events, such as when your app starts, when you get a memory warning, and when your app is sent to the background.
+
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // print("voallaa first print")
         return true
     }
 
