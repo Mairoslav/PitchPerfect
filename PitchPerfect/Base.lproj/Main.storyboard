@@ -88,14 +88,14 @@
                                     <action selector="stopButtonPressed:" destination="q3J-uz-qOI" eventType="touchUpInside" id="9tS-UU-P5B"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-nn-ryn">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-nn-ryn">
                                 <rect key="frame" x="16" y="18" width="343" height="544"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nI4-fx-kFT">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="141.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="181.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-Sm-b2e" userLabel="slowSnail">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="141.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="181.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Slow"/>
                                                 <connections>
@@ -103,7 +103,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phc-1c-ZME" userLabel="fastRabbit">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="141.5"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="181.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Fast"/>
                                                 <connections>
@@ -113,10 +113,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Ts-zr-Uio">
-                                        <rect key="frame" x="0.0" y="201.5" width="343" height="141"/>
+                                        <rect key="frame" x="0.0" y="181.5" width="343" height="181"/>
                                         <subviews>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TE2-dq-ilZ" userLabel="highChipmunk">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="141"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="181"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="HighPitch"/>
                                                 <connections>
@@ -124,7 +124,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laV-su-bLg" userLabel="lowDartvart">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="141"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="181"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="LowPitch"/>
                                                 <connections>
@@ -134,10 +134,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mNw-yM-Phu">
-                                        <rect key="frame" x="0.0" y="402.5" width="343" height="141.5"/>
+                                        <rect key="frame" x="0.0" y="362.5" width="343" height="181.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-sy-MtA" userLabel="echoPapagay">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="141.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="181.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Echo"/>
                                                 <connections>
@@ -145,7 +145,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-rg-zd9" userLabel="reverbHall">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="141.5"/>
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="181.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Reverb"/>
                                                 <connections>

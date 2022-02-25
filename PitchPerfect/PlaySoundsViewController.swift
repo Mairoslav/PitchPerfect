@@ -18,22 +18,22 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet weak var lowDartvart: UIButton!
     @IBOutlet weak var echoPapagay: UIButton!
     @IBOutlet weak var reverbHall: UIButton!
-    @IBOutlet weak var stopButton: UIButton! 
+    @IBOutlet weak var stopButton: UIButton!
     
     var recordedAudioURL: URL!
     
-    var audioFile:AVAudioFile!
+    var audioFile:AVAudioFile! 
     var audioEngine:AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
 
     enum ButtonType: Int {
-        case slow = 0, fast, chipmunk, vader, echo, reverb // Tag values from 0...5
+        case slow = 0, fast, chipmunk, vader, echo, reverb
     }
     
     // MARK: Play Sound Button Pressed
     
-    @IBAction func playSoundForButton(_ sender: UIButton) { // all 7 UIButtons wired up
+    @IBAction func playSoundForButton(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
             case .slow:
                 playSound(rate: 0.5)
@@ -54,35 +54,19 @@ class PlaySoundsViewController: UIViewController {
 
     // MARK: Stop Audio Button Pressed
     
-    @IBAction func stopButtonPressed(_ sender: AnyObject) { // why sender is AnyObject and not UIButton? janko
-        stopAudio() // call this function that is declared in extention ...+Audio.swift
+    @IBAction func stopButtonPressed(_ sender: AnyObject) {
+        stopAudio()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAudio() // Adding the Audio Extension
-        // Do any additional setup after loading the view.
+        setupAudio()
     }
     
     // MARK: stop button disabled at this stage
     
-    override func viewWillAppear(_ animated: Bool) { // 10. Adding the Audio Extension
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configureUI(.notPlaying) // stop button disabled at this stage, janko
+        configureUI(.notPlaying)
     }
-    
-    /*
-    override func didReceiveMemoryWarning() {... deleted 
-     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -30,12 +30,11 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     
     // MARK: PlayingState (raw values correspond to sender tags)
     
-    enum PlayingState { case playing, notPlaying }
+    enum PlayingState { case notPlaying, playing }
     
     // MARK: Audio Functions
     
     func setupAudio() {
-        // initialize (recording) audio file
         do {
             audioFile = try AVAudioFile(forReading: recordedAudioURL as URL)
         } catch {
@@ -57,6 +56,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         if let pitch = pitch {
             changeRatePitchNode.pitch = pitch
         }
+       
         if let rate = rate {
             changeRatePitchNode.rate = rate
         }
@@ -64,16 +64,16 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         
         // node for echo
         let echoNode = AVAudioUnitDistortion()
-        echoNode.loadFactoryPreset(.multiEcho1)
+        echoNode.loadFactoryPreset(.multiEcho2)
         audioEngine.attach(echoNode)
         
         // node for reverb
         let reverbNode = AVAudioUnitReverb()
-        reverbNode.loadFactoryPreset(.cathedral)
+        reverbNode.loadFactoryPreset(.largeHall)
         reverbNode.wetDryMix = 50
         audioEngine.attach(reverbNode)
         
-        // connect nodes
+        // connect all nodes
         if echo == true && reverb == true {
             connectAudioNodes(audioPlayerNode, changeRatePitchNode, echoNode, reverbNode, audioEngine.outputNode)
         } else if echo == true {
@@ -84,14 +84,13 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             connectAudioNodes(audioPlayerNode, changeRatePitchNode, audioEngine.outputNode)
         }
         
-        // schedule to play and start the engine!
+        // schedule to play and start the engine
         audioPlayerNode.stop()
         audioPlayerNode.scheduleFile(audioFile, at: nil) {
             
             var delayInSeconds: Double = 0
             
             if let lastRenderTime = self.audioPlayerNode.lastRenderTime, let playerTime = self.audioPlayerNode.playerTime(forNodeTime: lastRenderTime) {
-                
                 if let rate = rate {
                     delayInSeconds = Double(self.audioFile.length - playerTime.sampleTime) / Double(self.audioFile.processingFormat.sampleRate) / Double(rate)
                 } else {
@@ -99,7 +98,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
                 }
             }
             
-            // schedule a stop timer for when audio finishes playing
             self.stopTimer = Timer(timeInterval: delayInSeconds, target: self, selector: #selector(PlaySoundsViewController.stopAudio), userInfo: nil, repeats: false)
             RunLoop.main.add(self.stopTimer!, forMode: RunLoop.Mode.default)
         }
@@ -111,7 +109,6 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             return
         }
         
-        // play the recording!
         audioPlayerNode.play()
     }
     
